@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Subjects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+
+            const button = document.getElementById("modeToggle");
+            if (body.classList.contains("dark-mode")) {
+                button.textContent = "Switch to Light Mode";
+            } else {
+                button.textContent = "Switch to Dark Mode";
+            }
+        }
+        
+
+        function updateNotice(message) {
+            const notice = document.getElementById("notice");
+            notice.textContent = message;
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            background-color: #fff;
+            margin: 20px;
+            color: #333;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Dark/Light Mode Toggle Button */
+        #modeToggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        #modeToggle:hover {
+            background-color: #ff6347;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            text-decoration-color: #ff4500; /* Orange underline color */
+            text-decoration-thickness: 3px;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .stream {
+            width: 45%;
+        }
+
+        h3 {
+            background-color: #66b2b2; /* Light blue background */
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode h3 {
+            background-color: #4ff54f; /* Bright color for dark mode */
+            color: #0a0909;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f0f0f0; /* Light grey background for each list item */
+            padding: 8px;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        body.dark-mode li {
+            background-color: #333333;
+        }
+
+        li span {
+            width: 30%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #333;
+            width: 70%;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+            color: #007acc;
+        }
+
+        body.dark-mode li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode li a:hover {
+            color: #66b2b2;
+        }
+
+        .notice-board {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fffae6;
+            border: 1px solid #ffd700;
+            font-size: 16px;
+        }
+
+        .notice-board h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        body.dark-mode .notice-board {
+            background-color: #333333;
+            border: 1px solid #efe231;
+        }
+
+        .feedback-form {
+            margin-top: 30px;
+        }
+        .ad-container {
+            margin: 20px 0;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Additional styles for dark mode */
+        body.dark-mode .ad-container {
+            background-color: #444;
+            border: 1px solid #666;
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stream {
+                width: 100%;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 14px;
+            }
+
+            li span {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            li a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark/Light Mode Toggle Button -->
+    <button id="modeToggle" onclick="toggleMode()">Switch to Dark Mode</button>
+
+    <h2>1st Year (CSE & ECE STREAMS)</h2>
+
+    <div class="container">
+        <div class="stream">
+            <h3>CSE STREAMS</h3>
+            <ul>
+                <li><span>BMATS101</span> <a href="#">Mathematics-I</a></li>
+                <li><span>BCHES202/102</span> <a href="#">Chemistry</a></li>
+                <li><span>BESCK104/204B</span> <a href="#">Introduction To Elecrical Engg</a></li>
+                <li><span>BPLCK105/205B</span> <a href="#">Python</a></li>
+                <li><span>BMATS201</span> <a href="#">Mathematics-II</a></li>
+                <li><span>BPHYS202</span> <a href="#">Physics</a></li>
+                <li><span>BPOPS203</span> <a href="#">Principles of Programming Using C</a></li>
+                <li><span>BESCK204C</span> <a href="#">Introduction to Electronics Communication</a></li>
+            </ul>
+        </div>
+
+        <div class="stream">
+            <h3>ECE STREAM</h3>
+            <ul>
+                <li><span>BMATE101</span> <a href="#">Mathematics-I</a></li>
+                <li><span>BCHEE102</span> <a href="#">Chemistry</a></li>
+                <li><span>BESCK104B</span> <a href="#">Introduction To Elecrical Engg</a></li>
+                <li><span>BPLCK105B</span> <a href="#">Python</a></li>
+                <li><span>BMATE201</span> <a href="#">Mathematics-II</a></li>
+                <li><span>BPHYE202</span> <a href="#">Physics</a></li>
+                <li><span>BBEE203</span> <a href="#">Basic Electronics</a></li>
+                <li><span>BESCK204E</span> <a href="#">Introduction to C Programming</a></li>
+            </ul>
+        </div>
+
+        <div class="stream">
+            <h3>Common Subjects</h3>
+            <ul>
+                <li><span>BCEDK103/203</span> <a href="#">CAED</a></li>
+                <li><span>BENGK106/206</span> <a href="#">Communicative English</a></li>
+                <li><span>BSFHK158/258</span> <a href="#">SFH</a></li>
+                <li><span>BICOK107/207</span> <a href="#">Indian Constitution</a></li>
+                <li><span>BIDTK158/258</span> <a href="#">Innovation And Design Thinking</a></li>
+                <li><span>BETCK105/205H</span> <a href="#">Introduction to Internet Of Things</a></li>
+                <li><span>BKBKK107/207</span> <a href="#">Balake Kannada</a></li>
+                <li><span>BKSKK107/207</span> <a href="#">Samskrutika Kannada</a></li>
+                <li><span>BPWSK206</span> <a href="#">Professional Writing Skills</a></li>
+            </ul>
+        </div>    
+    </div>
+
+            <!-- Ad Container -->
+            <div class="ad-container">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6134168596521709"
+                    crossorigin="anonymous"></script>
+                <!-- add1 -->
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-6134168596521709"
+                    data-ad-slot="1049652621"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+            </div>
+        
+
+    <!-- Notice Board -->
+    <div class="notice-board">
+        <h3>Notice Board</h3>
+        <p id="notice">This is where important updates and notices will appear. Check back regularly for updates!</p>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="feedback-form">
+        <h3>Feedback Form</h3>
+        <iframe src="https://forms.gle/vySBmJgcL1Kr5Ffb7" width="540" height="500" frameborder="01" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+    <script>
+        // Example to update notice board
+        updateNotice("Stay tuned for more updates.");
+    </script>
+</body>
+</html>
